@@ -1,6 +1,9 @@
 import java.util.Scanner;
 public class StringCalculator {
     public int add(String numbers) {
+        if(numbers.isEmpty()){
+            return 0;
+        }
         int sum = 0;
         boolean has_negatives = false;
         String split_delimiters = "\\\\n|";
@@ -44,9 +47,6 @@ public class StringCalculator {
         }
         String[] nums = numbers.split(split_delimiters);
         for (String num : nums) {
-         //   if(num.isEmpty()){
-        //        return -1;
-        //    }
             int num_int;
             try{
                 num_int = Integer.parseInt(num);
